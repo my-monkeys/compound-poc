@@ -29,13 +29,13 @@ export default function GrowthChart({ params, lang }) {
   const milestones = [0.25, 0.5, 0.75].map(f => Math.round(params.years * f))
 
   return (
-    <div style={{ background: '#0a0c11', border: '1px solid #1a1e2a', borderRadius: 6, padding: '12px 14px' }}>
+    <div style={{ background: '#111825', border: '1px solid #1e2a3c', borderRadius: 6, padding: '12px 14px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
-        <span style={{ color: '#4a5568', fontSize: 10, textTransform: 'uppercase', letterSpacing: '.08em' }}>
+        <span style={{ color: '#6b7a8d', fontSize: 10, textTransform: 'uppercase', letterSpacing: '.08em' }}>
           {t(lang, 'evolutionChart')}
         </span>
         <div style={{ display: 'flex', gap: 12 }}>
-          {[['#4a5568', t(lang, 'contributed')], ['#e2cb95', lang === 'en' ? 'Total capital' : 'Capital total']].map(([color, label]) => (
+          {[['#6b7a8d', t(lang, 'contributed')], ['#e2cb95', lang === 'en' ? 'Total capital' : 'Capital total']].map(([color, label]) => (
             <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 5, color: '#3a4455', fontSize: 10 }}>
               <div style={{ width: 6, height: 6, borderRadius: '50%', background: color }} />
               {label}
@@ -50,24 +50,24 @@ export default function GrowthChart({ params, lang }) {
             <stop offset="100%" stopColor="#e2cb95" stopOpacity="0.02"/>
           </linearGradient>
           <linearGradient id="g-contrib" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#4a5568" stopOpacity="0.35"/>
-            <stop offset="100%" stopColor="#4a5568" stopOpacity="0.04"/>
+            <stop offset="0%" stopColor="#6b7a8d" stopOpacity="0.35"/>
+            <stop offset="100%" stopColor="#6b7a8d" stopOpacity="0.04"/>
           </linearGradient>
         </defs>
         {milestones.map(yr => {
           const x = (yr / params.years) * W
-          return <line key={yr} x1={x} y1={0} x2={x} y2={H - padB} stroke="#1a1e2a" strokeWidth="0.5"/>
+          return <line key={yr} x1={x} y1={0} x2={x} y2={H - padB} stroke="#1e2a3c" strokeWidth="0.5"/>
         })}
         <path d={contribArea} fill="url(#g-contrib)"/>
-        <path d={contribPath} stroke="#2e3545" strokeWidth="1" fill="none"/>
+        <path d={contribPath} stroke="#526878" strokeWidth="1" fill="none"/>
         <path d={totalArea} fill="url(#g-total)"/>
         <path d={totalPath} stroke="#e2cb95" strokeWidth="1.5" fill="none"/>
         {milestones.map(yr => (
-          <text key={yr} x={(yr / params.years) * W} y={H - 2} fill="#2e3545" fontSize="9" textAnchor="middle">
+          <text key={yr} x={(yr / params.years) * W} y={H - 2} fill="#526878" fontSize="9" textAnchor="middle">
             {yr} {t(lang, 'years')}
           </text>
         ))}
-        <text x={W - 4} y={H - 2} fill="#2e3545" fontSize="9" textAnchor="end">
+        <text x={W - 4} y={H - 2} fill="#526878" fontSize="9" textAnchor="end">
           {params.years} {t(lang, 'years')}
         </text>
       </svg>

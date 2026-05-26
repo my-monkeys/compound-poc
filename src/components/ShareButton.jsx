@@ -16,7 +16,7 @@ export default function ShareButton({ params, lang }) {
   return (
     <button
       onClick={handleShare}
-      style={{ background: 'none', border: '1px solid #1e2535', borderRadius: 4, color: copied ? '#7a9e6e' : '#4a5568', fontSize: 10, padding: '3px 8px', display: 'flex', alignItems: 'center', gap: 4 }}
+      style={{ background: 'none', border: '1px solid #243345', borderRadius: 4, color: copied ? '#7a9e6e' : '#6b7a8d', fontSize: 10, padding: '3px 8px', display: 'flex', alignItems: 'center', gap: 4 }}
     >
       <Share2 size={10} />
       {copied ? t(lang, 'copied') : t(lang, 'share')}

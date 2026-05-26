@@ -2,8 +2,8 @@ import { t } from '../lib/i18n'
 
 function Field({ label, fieldKey, params, onChange, opts = {} }) {
   return (
-    <div style={{ background: '#0a0c11', border: '1px solid #1a1e2a', borderRadius: 5, padding: '9px 11px', cursor: 'text' }}>
-      <div style={{ color: '#2e3545', fontSize: 9, textTransform: 'uppercase', letterSpacing: '.07em', marginBottom: 3 }}>{label}</div>
+    <div style={{ background: '#111825', border: '1px solid #1e2a3c', borderRadius: 5, padding: '9px 11px', cursor: 'text' }}>
+      <div style={{ color: '#526878', fontSize: 9, textTransform: 'uppercase', letterSpacing: '.07em', marginBottom: 3 }}>{label}</div>
       {opts.select ? (
         <select
           value={params[fieldKey]}

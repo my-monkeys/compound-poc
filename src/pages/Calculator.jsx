@@ -99,7 +99,7 @@ export default function Calculator({ scenario, lang }) {
           />
         </div>
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-          <div style={{ padding: '14px 18px 12px', borderBottom: '1px solid #161b26', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ padding: '14px 18px 12px', borderBottom: '1px solid #1b2535', display: 'flex', alignItems: 'center', gap: 10 }}>
             <button className="sidebar-toggle" onClick={() => setSidebarOpen(v => !v)}>
               {sidebarOpen ? <X size={16} /> : <Menu size={16} />}
             </button>
@@ -107,7 +107,7 @@ export default function Calculator({ scenario, lang }) {
             <ShareButton params={params} lang={lang} />
             <button
               onClick={handleSave}
-              style={{ background: 'none', border: '1px solid #1e2535', borderRadius: 4, color: '#4a5568', fontSize: 10, padding: '3px 8px' }}
+              style={{ background: 'none', border: '1px solid #243345', borderRadius: 4, color: '#6b7a8d', fontSize: 10, padding: '3px 8px' }}
             >
               {t(lang, 'save')}
             </button>

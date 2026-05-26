@@ -9,15 +9,15 @@ export default function ResultBanner({ params, lang }) {
   const interest = total - contributed
 
   return (
-    <div className="result-banner" style={{ background: '#0d1118', border: '1px solid #1e2535', borderLeft: '2px solid #e2cb9555', borderRadius: 6, padding: '14px 16px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 24 }}>
+    <div className="result-banner" style={{ background: '#131e2c', border: '1px solid #243345', borderLeft: '2px solid #e2cb9555', borderRadius: 6, padding: '14px 16px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 24 }}>
       <div>
-        <div style={{ color: '#4a5568', fontSize: 10, textTransform: 'uppercase', letterSpacing: '.08em', marginBottom: 4 }}>
+        <div style={{ color: '#6b7a8d', fontSize: 10, textTransform: 'uppercase', letterSpacing: '.08em', marginBottom: 4 }}>
           {t(lang, 'finalCapital')}
         </div>
         <div style={{ color: '#fff', fontSize: 26, fontWeight: 700, letterSpacing: '-.03em', lineHeight: 1 }}>
           {fmt(total)}
         </div>
-        <div style={{ color: '#556070', fontSize: 11, marginTop: 6 }}>
+        <div style={{ color: '#667585', fontSize: 11, marginTop: 6 }}>
           <span style={{ color: '#7a9e6e', fontWeight: 500 }}>+{fmt(interest)}</span>
           {' '}{t(lang, 'interest').toLowerCase()}
         </div>
@@ -28,7 +28,7 @@ export default function ResultBanner({ params, lang }) {
           [t(lang, 'totalInterest'), fmt(interest), true],
         ].map(([label, val, positive]) => (
           <div key={label}>
-            <div style={{ color: '#2e3545', fontSize: 10, marginBottom: 2 }}>{label}</div>
+            <div style={{ color: '#526878', fontSize: 10, marginBottom: 2 }}>{label}</div>
             <div style={{ color: positive ? '#7a9e6e' : '#8b949e', fontSize: 13, fontWeight: 500 }}>{positive ? '+' : ''}{val}</div>
           </div>
         ))}

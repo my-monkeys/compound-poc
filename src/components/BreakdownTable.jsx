@@ -14,10 +14,10 @@ export default function BreakdownTable({ params, lang }) {
 
   const rows = milestones.map(y => all[y - 1]).filter(Boolean)
 
-  const thStyle = { color: '#2e3545', fontSize: 10, textTransform: 'uppercase', letterSpacing: '.07em', fontWeight: 500, padding: '8px 12px', textAlign: 'left', borderBottom: '1px solid #1a1e2a' }
+  const thStyle = { color: '#526878', fontSize: 10, textTransform: 'uppercase', letterSpacing: '.07em', fontWeight: 500, padding: '8px 12px', textAlign: 'left', borderBottom: '1px solid #1e2a3c' }
 
   return (
-    <div className="table-scroll" style={{ background: '#0a0c11', border: '1px solid #1a1e2a', borderRadius: 6, overflow: 'hidden' }}>
+    <div className="table-scroll" style={{ background: '#111825', border: '1px solid #1e2a3c', borderRadius: 6, overflow: 'hidden' }}>
       <table style={{ width: '100%', minWidth: 360, borderCollapse: 'collapse' }}>
         <thead>
           <tr>
@@ -32,10 +32,10 @@ export default function BreakdownTable({ params, lang }) {
             const isLast = i === rows.length - 1
             return (
               <tr key={d.year}>
-                <td style={{ padding: '6px 12px', fontSize: 11, borderBottom: '1px solid #111520', color: isLast ? '#c9d1d9' : '#3a4455' }}>{d.year} {t(lang, 'years')}</td>
-                <td style={{ padding: '6px 12px', fontSize: 11, borderBottom: '1px solid #111520', color: isLast ? '#c9d1d9' : '#4a5568' }}>{fmt(d.contributed)}</td>
-                <td style={{ padding: '6px 12px', fontSize: 11, borderBottom: '1px solid #111520', color: '#7a9e6e', fontWeight: isLast ? 600 : 400 }}>+{fmt(d.interest)}</td>
-                <td style={{ padding: '6px 12px', fontSize: isLast ? 13 : 11, borderBottom: '1px solid #111520', color: '#e2cb95', fontWeight: isLast ? 600 : 400 }}>{fmt(d.total)}</td>
+                <td style={{ padding: '6px 12px', fontSize: 11, borderBottom: '1px solid #161e2c', color: isLast ? '#c9d1d9' : '#5e7080' }}>{d.year} {t(lang, 'years')}</td>
+                <td style={{ padding: '6px 12px', fontSize: 11, borderBottom: '1px solid #161e2c', color: isLast ? '#c9d1d9' : '#6b7a8d' }}>{fmt(d.contributed)}</td>
+                <td style={{ padding: '6px 12px', fontSize: 11, borderBottom: '1px solid #161e2c', color: '#7a9e6e', fontWeight: isLast ? 600 : 400 }}>+{fmt(d.interest)}</td>
+                <td style={{ padding: '6px 12px', fontSize: isLast ? 13 : 11, borderBottom: '1px solid #161e2c', color: '#e2cb95', fontWeight: isLast ? 600 : 400 }}>{fmt(d.total)}</td>
               </tr>
             )
           })}
