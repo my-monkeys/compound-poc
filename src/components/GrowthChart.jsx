@@ -35,7 +35,7 @@ export default function GrowthChart({ params, lang }) {
           {t(lang, 'evolutionChart')}
         </span>
         <div style={{ display: 'flex', gap: 12 }}>
-          {[['#4a5568', t(lang, 'contributed')], ['#e2cb95', t(lang, 'interest')]].map(([color, label]) => (
+          {[['#4a5568', t(lang, 'contributed')], ['#e2cb95', lang === 'en' ? 'Total capital' : 'Capital total']].map(([color, label]) => (
             <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 5, color: '#3a4455', fontSize: 10 }}>
               <div style={{ width: 6, height: 6, borderRadius: '50%', background: color }} />
               {label}
