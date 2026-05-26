@@ -84,7 +84,43 @@ select { font-family: inherit; font-size: inherit; }
 
   /* Home hero: smaller on mobile */
   .hero-title {
-    font-size: 26px !important;
+    font-size: 30px !important;
     letter-spacing: -.02em !important;
+  }
+
+  /* Features: 1 column */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Trust strip: 2×2 */
+  .trust-strip {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .trust-strip > div {
+    border-right: none !important;
+    border-bottom: 1px solid #0d1018;
+  }
+  .trust-strip > div:nth-child(odd) {
+    border-right: 1px solid #0d1018!important;
+  }
+  .trust-strip > div:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  /* Hero CTAs: stack */
+  .hero-btns {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+    max-width: 280px;
+  }
+  .hero-btns a {
+    justify-content: center;
+  }
+
+  /* Calc grid: keep 2 cols but smaller padding */
+  .calc-grid a {
+    padding: 14px 14px !important;
   }
 }
