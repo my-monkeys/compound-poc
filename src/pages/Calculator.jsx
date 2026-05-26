@@ -103,16 +103,6 @@ export default function Calculator({ scenario, lang }) {
             <ParamFields params={params} onChange={setParams} lang={lang} />
             <GrowthChart params={params} lang={lang} />
             <BreakdownTable params={params} lang={lang} />
-            <div style={{ minHeight: 90, background: '#0a0c11', border: '1px solid #1a1e2a', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <ins
-                className="adsbygoogle"
-                style={{ display: 'block', width: '100%' }}
-                data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                data-ad-slot="XXXXXXXXXX"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              />
-            </div>
           </div>
         </div>
       </div>
