@@ -9,7 +9,7 @@ export default function ResultBanner({ params, lang }) {
   const interest = total - contributed
 
   return (
-    <div style={{ background: '#0d1118', border: '1px solid #1e2535', borderLeft: '2px solid #e2cb9555', borderRadius: 6, padding: '14px 16px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 24 }}>
+    <div className="result-banner" style={{ background: '#0d1118', border: '1px solid #1e2535', borderLeft: '2px solid #e2cb9555', borderRadius: 6, padding: '14px 16px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 24 }}>
       <div>
         <div style={{ color: '#4a5568', fontSize: 10, textTransform: 'uppercase', letterSpacing: '.08em', marginBottom: 4 }}>
           {t(lang, 'finalCapital')}
@@ -22,7 +22,7 @@ export default function ResultBanner({ params, lang }) {
           {' '}{t(lang, 'interest').toLowerCase()}
         </div>
       </div>
-      <div style={{ display: 'flex', gap: 20, flexShrink: 0 }}>
+      <div className="result-banner-stats" style={{ display: 'flex', gap: 20, flexShrink: 0 }}>
         {[
           [t(lang, 'totalContributed'), fmt(contributed), false],
           [t(lang, 'totalInterest'), fmt(interest), true],

@@ -17,8 +17,8 @@ export default function BreakdownTable({ params, lang }) {
   const thStyle = { color: '#2e3545', fontSize: 10, textTransform: 'uppercase', letterSpacing: '.07em', fontWeight: 500, padding: '8px 12px', textAlign: 'left', borderBottom: '1px solid #1a1e2a' }
 
   return (
-    <div style={{ background: '#0a0c11', border: '1px solid #1a1e2a', borderRadius: 6, overflow: 'hidden' }}>
-      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+    <div className="table-scroll" style={{ background: '#0a0c11', border: '1px solid #1a1e2a', borderRadius: 6, overflow: 'hidden' }}>
+      <table style={{ width: '100%', minWidth: 360, borderCollapse: 'collapse' }}>
         <thead>
           <tr>
             <th style={thStyle}>{t(lang, 'year')}</th>

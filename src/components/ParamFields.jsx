@@ -35,7 +35,7 @@ export default function ParamFields({ params, onChange, lang }) {
   ]
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: 8 }}>
+    <div className="param-fields" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: 8 }}>
       <Field label={t(lang, 'initialCapital')} fieldKey="initial" params={params} onChange={onChange} opts={{ min: 0 }} />
       <Field label={t(lang, 'monthlyContribution')} fieldKey="monthly" params={params} onChange={onChange} opts={{ min: 0 }} />
       <Field label={t(lang, 'annualRate')} fieldKey="rate" params={params} onChange={onChange} opts={{ min: 0, max: 100, step: 0.1 }} />

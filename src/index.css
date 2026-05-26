@@ -28,3 +28,63 @@ body {
 button { font-family: inherit; font-size: inherit; cursor: pointer; }
 input { font-family: inherit; font-size: inherit; }
 select { font-family: inherit; font-size: inherit; }
+
+/* ── Sidebar toggle: hidden on desktop ─────────────────────── */
+.sidebar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #4a5568;
+  padding: 4px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 680px) {
+
+  /* Calculator: sidebar hidden, full-width layout */
+  .layout-sidebar {
+    display: none !important;
+  }
+  .layout-sidebar.open {
+    display: flex !important;
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    z-index: 50;
+    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.7);
+  }
+
+  .sidebar-toggle {
+    display: flex !important;
+  }
+
+  /* Params: 2 columns instead of 5 */
+  .param-fields {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Result banner: stack vertically */
+  .result-banner {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+  .result-banner-stats {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  /* Table: horizontal scroll on small screens */
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Home hero: smaller on mobile */
+  .hero-title {
+    font-size: 26px !important;
+    letter-spacing: -.02em !important;
+  }
+}

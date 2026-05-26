@@ -102,7 +102,7 @@ export default function Home({ lang }) {
 
             {/* Hero */}
             <section style={{ marginBottom: 52 }}>
-              <h1 style={{ color: '#e8eaf0', fontSize: 38, fontWeight: 700, letterSpacing: '-.03em', lineHeight: 1.15, marginBottom: 20, whiteSpace: 'pre-line' }}>
+              <h1 className="hero-title" style={{ color: '#e8eaf0', fontSize: 38, fontWeight: 700, letterSpacing: '-.03em', lineHeight: 1.15, marginBottom: 20, whiteSpace: 'pre-line' }}>
                 {c.hero}
               </h1>
               <p style={{ color: '#4a5568', fontSize: 14, lineHeight: 1.65, maxWidth: 400, whiteSpace: 'pre-line' }}>

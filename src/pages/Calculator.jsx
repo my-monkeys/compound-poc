@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Menu, X } from 'lucide-react'
 import { useLocation } from 'react-router-dom'
 import { listSimulations, saveSimulation, deleteSimulation, createSimulation } from '../lib/storage'
 import { decodeParams, encodeParams } from '../lib/url'
@@ -17,6 +18,7 @@ export default function Calculator({ scenario, lang }) {
   const location = useLocation()
   const [simulations, setSimulations] = useState(() => listSimulations())
   const [activeId, setActiveId] = useState(null)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const [params, setParams] = useState(() => {
     const fromUrl = decodeParams(location.search)
     return fromUrl ?? scenario.defaults
@@ -79,16 +81,28 @@ export default function Calculator({ scenario, lang }) {
         lang={lang}
       />
       <div style={{ display: 'flex', height: '100dvh', overflow: 'hidden' }}>
-        <Sidebar
-          simulations={simulations}
-          activeId={activeId}
-          onSelect={handleSelect}
-          onDelete={handleDelete}
-          onNew={handleNew}
-          lang={lang}
-        />
+        {/* Overlay for mobile sidebar */}
+        {sidebarOpen && (
+          <div
+            onClick={() => setSidebarOpen(false)}
+            style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 49 }}
+          />
+        )}
+        <div className={sidebarOpen ? 'layout-sidebar open' : 'layout-sidebar'}>
+          <Sidebar
+            simulations={simulations}
+            activeId={activeId}
+            onSelect={sim => { handleSelect(sim); setSidebarOpen(false) }}
+            onDelete={handleDelete}
+            onNew={() => { handleNew(); setSidebarOpen(false) }}
+            lang={lang}
+          />
+        </div>
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
           <div style={{ padding: '14px 18px 12px', borderBottom: '1px solid #161b26', display: 'flex', alignItems: 'center', gap: 10 }}>
+            <button className="sidebar-toggle" onClick={() => setSidebarOpen(v => !v)}>
+              {sidebarOpen ? <X size={16} /> : <Menu size={16} />}
+            </button>
             <h1 style={{ color: '#e8eaf0', fontSize: 14, fontWeight: 500, flex: 1 }}>{copy.h1}</h1>
             <ShareButton params={params} lang={lang} />
             <button
