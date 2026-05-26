@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { scenarios } from '../config/scenarios'
 import Seo from '../components/Seo'
 
-const BASE = 'https://compound.app'
+const BASE = 'https://compound.my-monkey.fr'
 
 const labels = {
   fr: {
@@ -40,6 +40,8 @@ export default function Home({ lang }) {
         hreflangFr={`${BASE}/`}
         hreflangEn={`${BASE}/en/`}
         jsonLd={jsonLd}
+        ogImage={`${BASE}/og/default.png`}
+        lang={lang}
       />
       <div style={{ minHeight: '100dvh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 24px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 32 }}>

@@ -11,7 +11,7 @@ import GrowthChart from '../components/GrowthChart'
 import BreakdownTable from '../components/BreakdownTable'
 import ShareButton from '../components/ShareButton'
 
-const BASE = 'https://compound.app'
+const BASE = 'https://compound.my-monkey.fr'
 
 export default function Calculator({ scenario, lang }) {
   const location = useLocation()
@@ -75,6 +75,8 @@ export default function Calculator({ scenario, lang }) {
         hreflangFr={`${BASE}${frPath}`}
         hreflangEn={`${BASE}${enPath}`}
         jsonLd={jsonLd}
+        ogImage={`${BASE}${scenario.ogImage}`}
+        lang={lang}
       />
       <div style={{ display: 'flex', height: '100dvh', overflow: 'hidden' }}>
         <Sidebar

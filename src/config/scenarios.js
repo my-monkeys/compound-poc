@@ -16,6 +16,7 @@ export const scenarios = {
     },
     defaults: { initial: 1000, monthly: 100, rate: 7, years: 20, compound: 12 },
     ceiling: 150000,
+    ogImage: '/og/pea.png',
   },
   'livret-a': {
     slug: 'livret-a',
@@ -34,6 +35,7 @@ export const scenarios = {
     },
     defaults: { initial: 1000, monthly: 100, rate: 3, years: 10, compound: 12 },
     ceiling: 22950,
+    ogImage: '/og/livret-a.png',
   },
   'assurance-vie': {
     slug: 'assurance-vie',
@@ -52,6 +54,7 @@ export const scenarios = {
     },
     defaults: { initial: 5000, monthly: 200, rate: 4.5, years: 15, compound: 12 },
     ceiling: null,
+    ogImage: '/og/assurance-vie.png',
   },
   retraite: {
     slug: 'retraite',
@@ -70,6 +73,7 @@ export const scenarios = {
     },
     defaults: { initial: 10000, monthly: 300, rate: 6, years: 25, compound: 12 },
     ceiling: null,
+    ogImage: '/og/retraite.png',
   },
 }
 
