@@ -75,6 +75,25 @@ export const scenarios = {
     ceiling: null,
     ogImage: '/og/retraite.png',
   },
+  custom: {
+    slug: 'custom',
+    enSlug: 'custom',
+    fr: {
+      name: 'Personnalisé',
+      title: "Simulateur personnalisé — Calculateur d'intérêts composés",
+      description: "Créez votre propre simulation avec les paramètres de votre choix. Taux, durée, versements — sans contrainte.",
+      h1: 'Simulateur personnalisé',
+    },
+    en: {
+      name: 'Custom',
+      title: 'Custom Compound Interest Calculator',
+      description: 'Build your own simulation with any parameters you choose. Rate, duration, contributions — no constraints.',
+      h1: 'Custom Calculator',
+    },
+    defaults: { initial: 10000, monthly: 200, rate: 5, years: 15, compound: 12 },
+    ceiling: null,
+    ogImage: '/og/custom.png',
+  },
 }
 
 // Map EN slug → FR slug key (pour React Router)

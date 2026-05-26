@@ -54,7 +54,7 @@ export default function Home({ lang }) {
         </div>
         <p style={{ color: '#4a5568', fontSize: 13, marginBottom: 40, textAlign: 'center', maxWidth: 400 }}>{copy.sub}</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, width: '100%', maxWidth: 480 }}>
-          {Object.values(scenarios).map(s => {
+          {Object.values(scenarios).filter(s => s.slug !== 'custom').map(s => {
             const href = lang === 'en' ? `/en/${s.enSlug}` : `/${s.slug}`
             const name = s[lang]?.name ?? s.fr.name
             return (
@@ -72,6 +72,19 @@ export default function Home({ lang }) {
               </Link>
             )
           })}
+          <Link
+            to={lang === 'en' ? '/en/custom' : '/custom'}
+            style={{ background: 'transparent', border: '1px dashed #1e2535', borderRadius: 8, padding: '16px 18px', textDecoration: 'none', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = '#e2cb9460' }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = '#1e2535' }}
+          >
+            <div style={{ color: '#4a5568', fontSize: 13, fontWeight: 500, marginBottom: 4 }}>
+              {lang === 'en' ? 'Custom' : 'Personnalisé'}
+            </div>
+            <div style={{ color: '#2e3545', fontSize: 11 }}>
+              {lang === 'en' ? 'Your own parameters' : 'Vos propres paramètres'}
+            </div>
+          </Link>
         </div>
         <div style={{ marginTop: 48 }}>
           <Link

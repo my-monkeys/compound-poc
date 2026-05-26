@@ -78,6 +78,11 @@ const pages = [
     title: "Épargne retraite",
     subtitle: "Simulez votre capital long terme",
   },
+  {
+    key: 'custom',
+    title: "Simulation personnalisée",
+    subtitle: "Vos propres paramètres, sans contrainte",
+  },
 ]
 
 for (const page of pages) {
