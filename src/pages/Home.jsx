@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { TrendingUp, Save, Share2, Shield, ChevronRight } from 'lucide-react'
+import { TrendingUp, Save, Share2, ChevronRight } from 'lucide-react'
 import { scenarios } from '../config/scenarios'
 import Seo from '../components/Seo'
 
@@ -343,11 +343,12 @@ export default function Home({ lang }) {
         {/* ── Footer ───────────────────────────────────────────── */}
         <footer style={{ borderTop: '1px solid #141d2a', padding: '18px 24px' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <Shield size={10} color="#526878" />
-              <span style={{ color: '#526878', fontSize: 10 }}>{c.footerPrivacy}</span>
-            </div>
-            <span style={{ color: '#243345', fontSize: 10 }}>© 2026 Compound</span>
+            <span style={{ color: '#526878', fontSize: 10 }}>© 2026 Compound</span>
+            <span style={{ color: '#526878', fontSize: 10 }}>·</span>
+            <a href="https://my-monkey.fr" style={{ color: '#526878', fontSize: 10, textDecoration: 'none' }}
+              onMouseEnter={e => { e.currentTarget.style.color = '#6b7a8d' }}
+              onMouseLeave={e => { e.currentTarget.style.color = '#526878' }}
+            >my-monkey.fr</a>
             <Link to={c.langSwitchTo} style={{ color: '#526878', fontSize: 10, textDecoration: 'none' }}
               onMouseEnter={e => { e.currentTarget.style.color = '#6b7a8d' }}
               onMouseLeave={e => { e.currentTarget.style.color = '#526878' }}
