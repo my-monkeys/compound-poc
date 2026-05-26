@@ -1,0 +1,9 @@
+{
+  "name": "Compound — Simulateur d'intérêts composés",
+  "short_name": "Compound",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
+  "icons": [{ "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }]
+}
